@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>动态创建函数</title>
+		<script>
+			var code = "var y=document.getElementById('str').value;alert(x+y+z);";
+			var myFunc = new Function("x", "z", code);
+
+			var code2 = "document.getElementById('func').innerText=myFunc.toString();";
+			var myFunc2 = new Function(code2);
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="str" />
+		<button onclick="myFunc('aaa ',' bb');">执行预定函数</button>
+		<br>
+		<button onclick="myFunc2();">显示myFunc函数代码</button>
+		<br>
+		<span id="func"></span>
+	</body>
+
+</html>
