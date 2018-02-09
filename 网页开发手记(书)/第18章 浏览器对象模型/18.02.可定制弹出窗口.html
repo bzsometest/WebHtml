@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function newW() {
+				var w = document.getElementById("w").value;
+				var h = document.getElementById("h").value;
+				var x = document.getElementById("x").value;
+				var y = document.getElementById("y").value;
+				var style = "directories=no,location=no.menubar=no,width=" + w + ",height=" + h;
+				var myFunc = window.open("http://baidu.com", "nwidow", style);
+				myFunc.moveTo(x, y);
+			}
+		</script>
+	</head>
+
+	<body>
+		<br/>新窗口宽度：
+		<input type="text" id="w" value="300" />
+		<br/> 新窗口宽度：
+		<input type="text" id="h" value="200" />
+		<hr/> 新窗口x坐标：
+		<input type="text" id="x" value="200" />
+		<br/> 新窗口y坐标：
+		<input type="text" id="y" value="200" />
+		<hr>
+		<button onclick="newW();">打开新窗口</button>
+	</body>
+
+</html>

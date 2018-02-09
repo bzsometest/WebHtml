@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function closewin() {
+				window.opener = null;
+				window.open('', '_self');
+				window.close();
+			}
+		</script>
+	</head>
+
+	<body>
+		<button onclick="closewin();">关闭窗口</button>
+	</body>
+
+</html>
