@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script>
+			var myDate = new Date();
+		</script>
 	</head>
+
 	<body>
+		<h2>Date常用对象方法</h2>
+		<script>
+			document.write("<hr>当前时间：" + myDate);
+			document.write("<hr>今天的日期是：" + myDate.getFullYear() + "年" + myDate.getMonth() + 1 + "月" + myDate.getDay() + "日");
+			document.write("<hr>现在的时间是：" + myDate.getHours() + "时" + myDate.getMinutes() + "分" + myDate.getSeconds() + "秒");
+			document.write("<hr>现在的格林时间：" + myDate.getUTCHours() + "时" + myDate.getUTCMinutes() + "分" + myDate.getUTCSeconds() + "秒");
+			document.write("<hr>本地时区：" + myDate.getTimezoneOffset() / 60);
+		</script>
+
+		<h2>时间转字符串</h2>
+
+		<script>
+			document.write("<hr>toString() 日期时间");
+			document.write("<hr>当前日期时间默认格式：" + myDate.toString());
+			document.write("<hr>当前日期时间本地格式：" + myDate.toLocaleString());
+
+			document.write("<hr>toDateString() 日期");
+			document.write("<hr>当前日期默认格式：" + myDate.toDateString());
+			document.write("<hr>当前日期本地格式：" + myDate.toLocaleDateString());
+
+			document.write("<hr>toTimeString() 时间");
+			document.write("<hr>当前时间默认格式：" + myDate.toTimeString());
+			document.write("<hr>当前时间本地格式：" + myDate.toLocaleTimeString());
+		</script>
 	</body>
+
 </html>
