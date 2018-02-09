@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var my1 = new Array(3, 1, 7, 5, 25, 1, 45, 77, 88);
+			var my2 = new Array("Pentiun", "中央处理器", "Intel", "AMD", "Athlon", 15, "中央处理器")
+			var str1 = "abcedfghijk";
+		</script>
+	</head>
+
+	<body>
+		<script>
+			document.write("my1:" + my1 + "<br>");
+			document.write("3-5:   " + my1.slice(1, -2) + "<br>");
+			document.write("3后面的:   " + my1.slice(3) + "<br>");
+			document.write("3后面的:   " + my1.slice(-2) + "<br><br>");
+
+			document.write("str:" + str1 + "<br>");
+			document.write("3-5:   " + str1.slice(3, 5) + "<br><br>");
+
+			document.write("my2:" + my2 + "<br>");
+			document.write("删除3后两个:   " + my2.splice(3, 2) + "<br>");
+			document.write("删除3后的值:   " + my2 + "<br><br>");
+
+			document.write("my2:" + my2 + "<br>");
+			document.write("删除3后两个:   " + my2.splice(3, 2) + "<br>");
+			document.write("删除3后的值:   " + my2 + "<br><br>");
+
+			document.write("my2:" + my2 + "<br>");
+			document.write("删除1后1个:   " + my2.splice(1, 1, "微软") + "<br>");
+			document.write("删除后并插入的值:   " + my2 + "<br><br>");
+		</script>
+	</body>
+
+</html>
