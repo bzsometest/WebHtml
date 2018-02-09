@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>计算时间小程序</title>
+		<script>
+			var myDate = new Date();
+
+			function display() {
+				var nowText = myDate.toLocaleDateString();
+				document.getElementById("now").innerText = nowText;
+			}
+
+			function pro() {
+				var newY = document.getElementById("newY").value;
+				var newM = document.getElementById("newM").value;
+				var newD = document.getElementById("newD").value;
+				var newDate = new Date(newY, newM, newD);
+				var offer = Math.abs(newDate.getTime() - myDate.getTime());
+				var days = Math.floor(offer / (1000 * 60 * 60 * 24));
+				alert("新日期和今天\n相差" + days + "天")
+			}
+		</script>
+		<script>
+			window.onload = display;
+		</script>
+	</head>
+
+	<body>
+		当前时间为：<span id="now"></span>
+		<hr> 请输入日期：
+		<br>
+		<input type="text" id="newY" value="2020" size="4" />年
+		<input type="text" id="newM" value="1" size="2" />月
+		<input type="text" id="newD" value="1" size="2" />日
+		<button id="btn" onclick="pro();">计算</button>
+	</body>
+
+</html>
