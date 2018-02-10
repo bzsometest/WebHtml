@@ -21,7 +21,5 @@ setTimeout()和setInterval()经常被用来处理延时和定时任务。setTime
 如：
 
 `<script type='text/html' style='display:block'>
-
     <input type="text" />
-    
 </scipt>`
