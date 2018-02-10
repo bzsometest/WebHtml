@@ -1,1 +1,32 @@
- element.style { } user agent stylesheet html { display: block; } display: block ; height: 187.667px ; width: 666px ; ﻿ ﻿ ​
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.aa {
+				width: 100px;
+				height: 100px;
+				background: #008B8B;
+			}
+			
+			.bb {
+				width: 100px;
+				height: 100px;
+				background: #ccc;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="my"></div>
+		<script>
+			var my = document.getElementById("my");
+			my.className = "aa";
+			my.className = "bb";
+		</script>
+	</body>
+
+</html>
