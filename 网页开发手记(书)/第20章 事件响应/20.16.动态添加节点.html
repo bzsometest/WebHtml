@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function dog() {
+				var txt1 = document.getElementById("txt1").value;
+				var txt2 = document.getElementById("txt2").value;
+				var txt3 = document.getElementById("txt3").value;
+				var txt4 = document.getElementById("txt4").value;
+				var node = document.getElementById("node");
+				var newNode = document.createElement(txt1);
+				newNode.innerText = txt2;
+				newNode.type = txt3;
+				newNode.value = txt4;
+				node.appendChild(newNode);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			innerText表示标签内的值，如：
+			<pre><a>这是值</a></pre>
+
+			<script type='text/html' style='display:block'>
+				<input type="text" />
+			</script>
+
+			<hr/>节点类型(标签名)<input id="txt1" type="text" value="input">
+			<br/> 节点文本(innerText)
+			<input id="txt2" type="text" value="">
+			<br/>type属性
+			<input id="txt3" type="text" value="text">
+			<br/>value属性
+			<input id="txt4" type="text" value="这是新增的节点">
+			<br/>
+			<button onclick="dog();">添加节点</button>
+			<hr />
+		</div>
+		<div id="node"></div>
+	</body>
+
+</html>

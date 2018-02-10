@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>文档标题</title>
+	</head>
+
+	<body>
+		<h4>文章标题</h4>
+		<p>段落文本</p>
+		<ul>
+			<li>列表项</li>
+			<li>列表项</li>
+		</ul>
+		<div>div容器<span>重点文本</span></div>
+		<table border="1">
+			<tr>
+				<td>表格文本</td>
+				<td>表格文本</td>
+			</tr>
+			<tr>
+				<td>表格文本</td>
+				<td>表格文本</td>
+			</tr>
+		</table>
+		<hr />
+		<script type="text/javascript">
+			var Main = document.childNodes[0];
+			var Head = Main.childNodes[0];
+			var Body = Main.childNodes[1];
+			for(var i; i < 3; i++) {
+				document.write(Body.childNodes[i].nodeName + "<br>");
+			}
+		</script>
+		<hr />代码出错，无法使用nodeName等
+	</body>
+
+</html>

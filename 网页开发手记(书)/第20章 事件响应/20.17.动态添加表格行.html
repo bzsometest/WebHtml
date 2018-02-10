@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function add() {
+				var txt1 = document.getElementById("txt1").value;
+				var txt2 = document.getElementById("txt2").value;
+				var txt3 = document.getElementById("txt3").value;
+				var txt4 = document.getElementById("txt4").value;
+
+				var ttr = document.getElementById("tb").insertRow();
+				ttr.insertCell().innerText = txt1;
+				ttr.insertCell().innerHTML = txt2;
+				ttr.insertCell().innerText = txt3;
+
+				var td4 = ttr.insertCell();
+				td4.colSpan = 2;
+				td4.innerHTML = txt4;
+			}
+		</script>
+	</head>
+
+	<body>
+		<input id="txt1" type="text" placeholder="innerText" value="</tr>">
+		<input id="txt2" type="text" placeholder="innerHTML" value="</tr>">
+		<input id="txt3" type="text" placeholder="innerText" value="<a href='#'>删除</a>">
+		<input id="txt4" type="text" placeholder="innerHTML" value="<a href='#'>删除</a>">
+		<button onclick="add();">添加表格行</button>
+		<hr />
+		<table width="60%" border="1" bordercolor="#ccc" id="tb">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>爱好</th>
+				<th>特长</th>
+			</tr>
+		</table>
+	</body>
+
+</html>
