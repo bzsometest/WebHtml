@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function f1() {
+				var txt = screen.width + "像素";
+				document.getElementById("show").innerText = txt;
+			}
+
+			function f2() {
+				var txt = screen.height + "像素";
+				document.getElementById("show").innerText = txt;
+			}
+
+			function f3() {
+				var txt = screen.availWidth + "像素";
+				document.getElementById("show").innerText = txt;
+			}
+
+			function f4() {
+				var txt = screen.availHeight + "像素";
+				document.getElementById("show").innerText = txt;
+			}
+
+			function f5() {
+				var txt = screen.colorDepth + "位";
+				document.getElementById("show").innerText = txt;
+			}
+		</script>
+	</head>
+
+	<body>
+		你的屏幕信息：<span id="show"></span>
+		<hr />
+		<button onclick="f1();">屏幕宽度</button>
+		<button onclick="f2();">屏幕高度</button>
+		<button onclick="f3();">屏幕可用宽度</button>
+		<button onclick="f4();">屏幕可用高度</button>
+		<hr />
+		<button onclick="f5();">屏幕颜色深度</button>
+	</body>
+
+</html>
