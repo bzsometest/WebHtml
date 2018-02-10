@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function f1() {
+				window.history.back();
+			}
+
+			function f2() {
+				window.history.forward();
+			}
+
+			function f3() {
+				window.history.go(0);
+			}
+		</script>
+	</head>
+
+	<body>
+		<button onclick="f1();">后退</button>
+		<button onclick="f2();">前进</button>
+		<button onclick="f3();">刷新</button>
+		<hr>
+		<h1>b.html</h1>
+		<a href="18.07.a.html">a.html</a> - 
+		<a href="18.07.b.html">b.html</a> - 
+		<a href="http://baidu.com">baidu.com</a>
+		<hr>
+		<script>
+			document.write("当前时间：" + new Date().toLocaleTimeString());
+		</script>
+	</body>
+
+</html>
