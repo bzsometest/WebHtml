@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			document.write("<hr>主机部分 hostname：" + location.hostname);
+			document.write("<hr>协议部分 protocol：" + location.protocol);
+			document.write("<hr>路径部分 pathname：" + location.pathname);
+			document.write("<hr>主机和端口部分  host：" + location.host);
+			document.write("<hr>完整url  href：" + location.href);
+			document.write("<hr>锚标记部分 bash：" + location.hash);
+			document.write("<hr>查询部分 search：" + location.search);
+		</script>
+		<script>
+			function display() {
+				var txt = document.getElementById("txt").value;
+				window.frames[0].location.href = txt;
+
+			}
+
+			function myfun() {
+				alert("ss");
+			}
+		</script>
+		<hr>
+		<input id="txt" type="text" value="http://baidu.com" /><button onclick="display();">显示</button>
+		<iframe width="400px" height="300px" onchange="myfun();"></iframe>
+	</body>
+
+</html>
