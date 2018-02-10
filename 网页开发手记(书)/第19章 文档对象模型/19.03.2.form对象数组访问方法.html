@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function dom(x) {
+				var fm1 = document.getElementById("fm1").value;
+				var fm2 = document.getElementById("fm2").value;
+				switch(x) {
+					case 1:
+						document.form1["txt" + fm1].value = "选中";
+						break;
+					case 2:
+						document.form1["txt" + fm1].value = "";
+						break;
+					case 3:
+						document.form2["txt" + fm2].value = "选中";
+						break;
+					case 4:
+						document.form2["txt" + fm2].value = "";
+						break;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<h2>通过name对象访问form数组对象</h2>第1个表单
+		<input type="text" id="fm1" value="0" size="2" /><button onclick="dom(1);">选中</button><button onclick="dom(2);">清除</button>
+		<br />第2个表单
+		<input type="text" id="fm2" value="1" size="2" /><button onclick="dom(3);">选中</button><button onclick="dom(4);">清除</button>
+		<hr />
+
+		<form name="form1"><input name="txt0" type="text" value=""><input name="txt1" type="text" value=""><input name="txt2" type="text" value=""></form>
+		<form name="form2"><input name="txt0" type="text" value=""><input name="txt1" type="text" value=""><input name="txt2" type="text" value=""></form>
+	</body>
+
+</html>

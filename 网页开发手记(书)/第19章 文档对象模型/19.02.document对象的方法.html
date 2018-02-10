@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var mywin;
+
+			function dom(x) {
+				switch(x) {
+					case 1:
+						mywin = window.open("", "a", "height=160,width=300");
+						mywin.location = " 19.01.document对象的属性.html";
+						break;
+					case 2:
+						//mywin.document.focus();
+						mywin.document.open();
+						mywin.document.write("这是新的文档流的内容。");
+						mywin.document.close();
+						break;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<script>
+			document.writeln("hello!");
+			document.writeln("world!");
+		</script>
+		<hr />
+		<button onclick="dom(1);">打开新窗口</button>
+		<button onclick="dom(2);">打开新文档流</button>
+
+	</body>
+
+</html>

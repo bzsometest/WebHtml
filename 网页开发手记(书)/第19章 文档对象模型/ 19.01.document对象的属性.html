@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function dom(x) {
+				var txt = document.getElementById("txt").value;
+				switch(x) {
+					case 1:
+						document.bgColor = txt;
+						break;
+					case 2:
+						document.fgColor = txt;
+						break;
+					case 3:
+						document.linkColor = txt;
+						break;
+					case 4:
+						alert(document.lastModified);
+						break;
+					case 5:
+						alert(document.URL);
+						break;
+					case 6:
+						document.cookie = "userId=828";
+						document.cookie = "userName=hulk";
+						alert(document.cookie);
+						break;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<button onclick="dom(4);">本文档修改时间</button>
+		<button onclick="dom(5);">本文档修改URL</button>
+		<button onclick="dom(6);">获得cookie</button>
+		<hr />
+		<input type="text" name="txt" id="txt" value="silver" /><br />
+
+		<button onclick="dom(1);">背景颜色</button>
+		<button onclick="dom(2);">文本颜色</button>
+		<button onclick="dom(3);">未访问连接颜色</button>
+		<hr />
+		<p>document.bgColor;document.fgColor; document.linkColor;</p>
+		<a href="#">链接</a>
+	</body>
+
+</html>
