@@ -33,6 +33,6 @@ setTimeout()和setInterval()经常被用来处理延时和定时任务。setTime
 将HTML代码嵌入到<script type='text/html' style='display:block'></scipt>中 
 如：
 
-<script type='text/html' style='display:block'>
+·<script type='text/html' style='display:block'>
     <input type="text" />
-</scipt>
+</scipt>·
