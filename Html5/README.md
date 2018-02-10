@@ -14,7 +14,9 @@ setTimeout()和setInterval()经常被用来处理延时和定时任务。setTime
 <br/>
 从定义上我们可以看到两个函数十分类似，只不过前者执行一次，而后者可以执行多次，两个函数的参数也相同，第一个参数是要执行的code或句柄，第二个是延迟的毫秒数。
 <hr/>
+
 ### 让浏览器直接输出HTML代码而不解析
+
 将HTML代码嵌入到<script type='text/html' style='display:block'></scipt>中 
 如：
 
