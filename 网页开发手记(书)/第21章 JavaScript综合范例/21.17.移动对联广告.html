@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				width: 120%;
+			}
+			
+			.main {
+				width: 300px;
+				height: 200px;
+				margin: 0 auto;
+				background: #eee;
+				border: 2px solid #333;
+			}
+			
+			#left,
+			#right {
+				width: 100px;
+				height: 150px;
+				background: #F5F5DC;
+				color: #fff;
+				position: absolute;
+				top: 40px;
+			}
+			
+			#left {
+				left: 10px;
+			}
+			
+			#right {
+				right: 10px;
+			}
+		</style>
+		<script>
+			function closed() {
+				document.getElementById("left").style.display = "none";
+				document.getElementById("right").style.display = "none";
+			}
+
+			function dis() {
+				var w = document.documentElement.scrollWidtht;
+				var h = document.documentElement.scrollHeight;
+				var x = document.documentElement.scrollLeft;
+				var y = document.documentElement.scrollTop;
+				document.getElementById("txt1").innerHTML = w + "像素";
+				document.getElementById("txt2").innerHTML = h + "像素";
+				document.getElementById("txt3").innerHTML = x + "像素";
+				document.getElementById("txt4").innerHTML = y + "像素";
+			}
+
+			function set() {
+				dis();
+				var sin = setInterval(mod, 100);
+
+				function mod() {
+					var y = document.documentElement.scrollTop;
+					var j = document.getElementById("right").style.pixelTop;
+					if(j != (y + 40)) {
+						var add = (y + 40) - j;
+						if(add > 0) {
+							add = 1;
+						} else {
+							add = -1;
+						}
+						document.getElementById("left").style.pixelTop += add;
+						document.getElementById("right").style.pixelTop += add;
+					} else {
+						clearInterval(sin);
+					}
+				}
+
+			}
+			window.onscroll = set;
+		</script>
+	</head>
+
+	<body>
+		<div id="left">
+			<p></p>
+			<a href="javascript:closed();" title="关闭广告">x关闭</a>
+		</div>
+		<div id="right">
+			<p></p>
+			<a href="javascript:closed();" title="关闭广告">x关闭</a>
+		</div>
+		<div class="main">页面主体内容1</div>
+		<div class="main">
+			<hr />页面滚动条的宽度
+			<span id="txt1"></span>
+			<hr />页面滚动条的高度
+			<span id="txt2"></span>
+			<hr />页面滚动条水平移动距离
+			<span id="txt3"></span>
+			<hr />页面滚动条垂直移动距离
+			<span id="txt4"></span>
+
+		</div>
+		<div class="main">页面主体内容3</div>
+		<div class="main">页面主体内容4</div>
+	</body>
+
+</html>
