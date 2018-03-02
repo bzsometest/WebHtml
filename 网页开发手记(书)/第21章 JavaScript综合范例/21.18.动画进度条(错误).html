@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#main {
+				width: 400px;
+				height: 20px;
+				margin: 0 auto;
+				background: #eee;
+				border: 1px solid #333;
+			}
+			
+			#bar {
+				width: 0px;
+				height: 20px;
+				background: #eee;
+			}
+		</style>
+
+		<script>
+			var act;
+
+			function over() {
+				act = setInterval(over2, 100);
+			}
+
+			function over2() {
+				var w = parseInt(document.getElementById("bar").style.pixelWidth);
+				alert(w);
+				if(w < 400) {
+					document.getElementById("bar").style.pixelWidth = w + 2;
+					document.getElementById("txt").innerText = "Loading..." + Math.floor((w / 400) * 100) + "%";
+				} else {
+					document.getElementById("txt").innerText = "载入完成100%";
+					clearInterval(act);
+				}
+			}
+
+			function out() {
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<h4 id="txt">等待载入 0%</h4>
+		<div id="main" onmousemove="over();" onmouseout="out();">
+			<div id="bar">bar</div>
+		</div>
+		<button onclick="over();">开始载入</button>
+		<button onclick="out();">开始卸载</button>
+	</body>
+
+</html>

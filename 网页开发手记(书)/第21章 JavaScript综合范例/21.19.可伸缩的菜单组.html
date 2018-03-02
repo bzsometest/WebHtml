@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function set(ct) {
+				var divs = document.getElementsByTagName("div");
+				if(divs[ct].style.display == "none") {
+					for(var i = 0; i < divs.length; i++) {
+						divs[i].style.display = "none";
+					}
+					divs[ct].style.display = "block";
+				} else {
+					divs[ct].style.display = "none";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<a href="javascript:set(1);" hidefocus="true">公司介绍</a>
+		<div id="ct1" style="display: none;">公司介绍内容区</div>
+
+		<a href="javascript:set(1);">公司介绍</a>
+		<div id="ct1" style="display: none;">公司介绍内容区</div>
+
+		<a href="javascript:set(1);">公司介绍</a>
+		<div id="ct1" style="display: none;">公司介绍内容区</div>
+
+		<a href="javascript:set(1);">公司介绍</a>
+		<div id="ct1" style="display: none;">公司介绍内容区</div>
+
+	</body>
+
+</html>
