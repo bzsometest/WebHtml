@@ -8,7 +8,7 @@
 		<style>
 			.left {
 				width: auto;
-				height: 400px;
+				height: 200px;
 			}
 			
 			.left div {
@@ -29,14 +29,11 @@
 	</head>
 
 	<body>
-		<h2>parent方法()</h2>
-		<div class="left first-div">
-
+		<h2>closest方法()</h2>
+		<div class="left first-div level-2">
 			<div class="div">
 				<ul class="level-2">
-					<!-- A -->
 					<li class="item-a">A</li>
-					<!-- B -->
 					<li class="item-b">B
 						<ul class="level-3">
 							<li class="item-1">1</li>
@@ -44,48 +41,27 @@
 							<li class="item-3">3</li>
 						</ul>
 					</li>
-					<!-- C -->
 					<li class="item-c">C</li>
-
-				</ul>
-			</div>
-
-			<div class="div">
-				<ul class="level-2">
-					<!-- A -->
-					<li class="item-a">A</li>
-					<!-- B -->
-					<li class="item-b">B
-						<ul class="level-3">
-							<li class="item-1">1</li>
-							<li class="item-2">2</li>
-							<li class="item-3">3</li>
-						</ul>
-					</li>
-					<!-- C -->
-					<li class="item-c">C</li>
-
 				</ul>
 			</div>
 		</div>
-
-		<button>点击：parent无参数</button>
-		<button>点击：paren传递选择器</button>
+		<br/>
+		<button>点击：closest传递选择器 </button>
+		<button>点击：closest传递一个元素对象</button>
 		<script type="text/javascript">
 			$("button:first").click(function() {
 				//?
-				$(".level-3").parent("li").css("border", "3px solid red")
+				$(".item-1").closest(".level-2").css("border", "3px solid red")
 			})
 		</script>
-
 		<script type="text/javascript">
 			$("button:last").click(function() {
-				//找到所有class=item-a的父元素
-				//然后给每个ul,然后筛选出最后一个，加上蓝色的边
-				$('.item-a').parent(':last').css('border', '1px solid blue')
+				var itemB = $('.item-b')
+				$('li.item-1')
+					.closest(itemB)
+					.css('border', '1px solid blue');
 			})
 		</script>
-
 	</body>
 
 </html>
