@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+ </head>
+
+ <body>
+  <style type="text/css">
+   .carousel .carousel-inner img {
+    width: 100%;
+   }
+  </style>
+  <div class="carousel slide" data-ride="carousel" id="imooc-carousel">
+   <!--游标-->
+   <ol class="carousel-indicators">
+    <li data-target="#imooc-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#imooc-carousel" data-slide-to="1"></li>
+    <li data-target="#imooc-carousel" data-slide-to="2"></li>
+    <li data-target="#imooc-carousel" data-slide-to="3"></li>
+   </ol>
+   <!--图片-->
+   <div class="carousel-inner">
+    <div class="item active">
+     <a href="##">
+      <img src="http://img.mukewang.com/57ece28d0001008c12000460.jpg" />
+     </a>
+    </div>
+    <div class="item">
+     <a href="##">
+      <img src="http://img.mukewang.com/57d21c7a0001bf9d12000460.jpg" />
+     </a>
+    </div>
+    <div class="item">
+     <a href="##">
+      <img src="http://img.mukewang.com/57d21e1f0001ed0012000460.jpg" />
+     </a>
+    </div>
+    <div class="item">
+     <a href="##">
+      <img src="http://img.mukewang.com/57d8cd54000198c712000460.jpg" />
+     </a>
+    </div>
+   </div>
+   <!--控件-->
+   <a class="carousel-control left" href="#imooc-carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+   </a>
+   <a class="carousel-control right" href="#imooc-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+   </a>
+  </div>
+
+  <script type="text/javascript">
+   $('.carousel').carousel({
+    interval: 2000
+   })
+  </script>
+
+ </body>
+
+</html>
