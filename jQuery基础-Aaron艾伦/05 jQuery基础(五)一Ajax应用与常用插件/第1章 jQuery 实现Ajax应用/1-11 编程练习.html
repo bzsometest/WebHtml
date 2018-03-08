@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>挑战题</title>
+		<script src="http://libs.baidu.com/jquery/1.8.2/jquery.js" type="text/javascript"></script>
+
+	</head>
+
+	<body>
+		<button id="start">加载</button>
+		<div id="show">显示:</div>
+	</body>
+	<script>
+		$("#start").bind("click", function() {
+			$.each(["aa","bbb"], function(index, obj) {
+				$("#show").append(obj);
+			});
+		});
+	</script>
+
+</html>
