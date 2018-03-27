@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/star-rating-svg.css" />
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.star-rating-svg.js"></script>
+		<script>
+			$(function() {
+				$("#my-star").starRating({
+					hoverColor: 'blue',
+					initialRating: 3,
+					starSize: 50,
+					callback: function(rating) {
+						$("input").val(rating + "星");
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<h3>你对我的评价是</h3>
+		<input type="text" size="28" />
+		<div id="my-star"></div>
+	</body>
+
+</html>
