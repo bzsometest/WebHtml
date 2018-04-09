@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script>
+			$(function() {
+				var graphicDIV = $("#tar")[0];
+				//var graphicDIV = document.getElementById('tar');
+
+				var myChart = echarts.init(graphicDIV);
+				var option = {
+					title: {
+						show: true,
+						text: '平均统计表',
+						x: 'center'
+					},
+					tooltip: {
+						show: true,
+						textStyle: {
+							fontStyle: 'italic',
+							color: 'white'
+						}
+					},
+
+					grid: {
+						show: true
+					},
+
+					legend: {
+						data: ['平均分'],
+						top: '30'
+					},
+					xAxis: [{
+						type: 'category',
+						data: ["一班", "二班", "三班", "四班"]
+					}],
+					yAxis: [{
+						type: 'value'
+					}],
+					series: [{
+						name: '平均分',
+						type: "bar",
+						data: [73, 80, 66, 90]
+					}]
+				}
+				myChart.setOption(option);
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div id="tar" style="height: 400px;"></div>
+	</body>
+
+</html>

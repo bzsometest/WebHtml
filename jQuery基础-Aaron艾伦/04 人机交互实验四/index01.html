@@ -15,14 +15,16 @@
 		<input type="checkbox" name="fruit" value="橘子" />橘子
 		<br />
 		<button>获取结果</button>
-		
+
 		<script>
 			$("button").click(function() {
+				var fruit  = new Array();
 				//	alert($(":checked").val());//只输出第一个
 				$(":checked").each(function(index, obj) {
 					//alert(obj.value);//dom对象
-					alert($(obj).val());
+					fruit.push(obj.value);
 				});
+				alert("你选择的是:" + fruit.join(","));
 			});
 		</script>
 	</body>
