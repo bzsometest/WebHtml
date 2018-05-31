@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table {
+				width: 100%;
+				border: 1px solid #abcdef;
+				border-collapse: collapse;
+			}
+			
+			.evenRow {
+				background: #38a38a;
+			}
+			
+			.evenRow2 {
+				background: #ccc;
+			}
+			
+			.oddRow {
+				background: #09f;
+			}
+			
+			.currentRow {
+				background: yellow;
+			}
+			
+			th,
+			td {
+				height: 28px;
+				border: 1px solid #abcded;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-table-1.0.js"></script>
+		<script>
+			$(function() {
+				//$('#table1').table();
+				$('#table1').table({
+					//各种参数，各种属性
+					evenRowClass: 'evenRow2',
+					//	eventType: 'click'
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<p>table-对象级插件开发.html</p>
+		开发一个插件要求奇数行的颜色是#38a38a,偶数行的颜色是#09f
+		<br/> 当鼠标移动到当前行变成yellow,当鼠标离开还原成原来的颜色
+		<table id="table1">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+			<tr>
+				<td>张三</td>
+				<td>18</td>
+			</tr>
+			<tr>
+				<td>李四</td>
+				<td>28</td>
+			</tr>
+			<tr>
+				<td>王五</td>
+				<td>19</td>
+			</tr>
+			<tr>
+				<td>张三</td>
+				<td>18</td>
+			</tr>
+			<tr>
+				<td>李四</td>
+				<td>28</td>
+			</tr>
+			<tr>
+				<td>王五</td>
+				<td>19</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

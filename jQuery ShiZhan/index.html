@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<style>
+			#table {
+				border: 1px solid #abcdef;
+				border-collapse: collapse;
+				width: 600px;
+			}
+			
+			tr {
+				height: 30px;
+			}
+			
+			th {
+				border: 1px solid #ddd;
+			}
+			
+			td {
+				border: 1px solid #ddd;
+				text-align: center;
+			}
+			
+			td a {
+				margin-right: 5px;
+				color: #f00;
+			}
+			
+			.popDiv {
+				width: 500px;
+				padding: 10px;
+				border: 1px solid red;
+				position: absolute;
+				left: 50%;
+				margin-left: -250px;
+				top: 100px;
+				background: #fff;
+				display: none;
+				z-index: 4;
+			}
+			
+			.popDiv p {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table id="tab">
+			<tr>
+				<th>姓名</th>
+				<th>工资</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>李四</td>
+				<td>12000</td>
+				<td>
+					<a href="#" class="view">查看</a>
+					<a href="#" class="del">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>王五</td>
+				<td>15000</td>
+				<td>
+					<a href="#" class="view">查看</a>
+					<a href="#" class="del">删除</a>
+				</td>
+			</tr>
+		</table>
+		<div class="popDiv">
+			<p><strong>姓名：</strong><span></span></p>
+			<p><strong>工资：</strong><span></span></p>
+			<a href="#" class="close">关闭</a>
+
+		</div>
+		<script>
+			$(".view").click(function() {
+				var maskHeight = $(document).height();
+				var maskWidth = $(document).width();
+				//添加遮罩层
+				$('<div class="mask"></div>').appendTo($('body'));
+				$('div.mask').css({
+					'opacity': 0.4,
+					'background': '#000',
+					'position': 'absolute',
+					'left': 0,
+					'top': 0,
+					'width': maskWidth,
+					'height': maskHeight,
+					'z-index': 2
+				});
+
+				var arr = [];
+				$(this).parent().siblings().each(function() {
+					arr.push($(this).text());
+				});
+				$(".popDiv").show().children().each(function(i) {
+					$(this).children("span").text(arr[i]);
+				});
+				$(".close").click(function() {
+					$(this).parent().hide();
+					$(".mask").remove();
+				});
+			});
+			$(".del").click(function() {
+				//$(this).parents("tr").remove();
+				$(this).parent().parent().remove();
+			});
+		</script>
+	</body>
+
+</html>

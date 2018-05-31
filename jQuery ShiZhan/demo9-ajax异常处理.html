@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+
+	<body>
+		<div id="show1">
+			<input type="button" value="获取数据1" />
+			<span style="color: red;"></span>
+		</div>
+		<div id="show2">
+			<input type="button" value="获取数据2" />
+			<span style="color: red;"></span>
+		</div>
+		<script>
+			$('#show1>input').click(function() {
+				$.ajax({
+					url: 'demo9.php?' + Math.random(),
+					type: 'post',
+					timeout: 1000,
+					success: function(data) {
+						$("#show1>span").html(data);
+					},
+					error: function(XHR, status, error) {
+						alert(XHR + "," + status + "," + error);
+						if(error == 'Not Found') {
+							$("#show1>span").html("你请求的地址不存在!")
+						}
+						if(status == 'timeout') {
+							$("#show1>span").html("你请求的超时，请刷新页面!")
+						}
+					}
+				});
+			});
+			$("#show1").ajaxError(function() {
+				$("#show1>span").html("ajax1请求错误!")
+			});
+			$('#show2>input').click(function() {
+				$.ajax({
+					url: 'demo9.php?' + Math.random(),
+					type: 'post',
+					timeout: 1000,
+					success: function(data) {
+						$("#show2>span").html(data);
+					},
+					error: function(XHR, status, error) {
+						alert(XHR + "," + status + "," + error);
+						if(error == 'Not Found') {
+							$("#show2>span").html("你请求的地址不存在!")
+						}
+						if(status == 'timeout') {
+							$("#show2>span").html("你请求的超时，请刷新页面!")
+						}
+					}
+				});
+			});
+			$("#show2").ajaxError(function() {
+				$("#show2>span").html("ajax2请求错误!")
+			});
+		</script>
+	</body>
+
+</html>

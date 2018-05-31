@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+
+	</head>
+
+	<body>
+		<input type="button" value="获取新闻列表" />
+		<div id="info">
+			<div id="loading" style="display: none;">正在加载数据...</div>
+			<ul></ul>
+		</div>
+		<script>
+			$(function() {
+				$('input').click(function() {
+					var ul = $('#info>ul');
+					$.ajax({
+						type: "get",
+						url: "demo5.php?" + Math.random(),
+						async: true,
+						success: function(data) {
+							var result = eval(data);
+							for(var i = 0; i < result.length; i++) {
+								ul.append('<li>' + result[i].title + '<em>' + result[i].publicTime + '</em>' + '</li>')
+							}
+						}
+					});
+				});
+			});
+			$(document).ajaxStart(function() {
+				$("#loading").show();
+			}).ajaxStop(function() {
+				$("#loading").hide();
+			});
+		</script>
+	</body>
+
+</html>

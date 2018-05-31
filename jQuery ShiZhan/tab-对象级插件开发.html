@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-tab.js"></script>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				margin: 50px;
+			}
+			
+			.tabNav {
+				list-style-type: none;
+			}
+			
+			.tabNav li {
+				float: left;
+				width: 150px;
+				height: 26px;
+				line-height: 26px;
+				text-align: center;
+				margin-right: 3px;
+				border: 1px solid #abcdef;
+				border-bottom: none;
+			}
+			
+			.tabContent {
+				clear: both;
+			}
+			
+			.tabNav li.current {
+				background: #abcdef;
+				color: #fff;
+				font-weight: 700;
+			}
+			
+			.tabContent div {
+				border: 1px solid #abcdef;
+				display: none;
+				width: 500px;
+				height: 200px;
+			}
+		</style>
+		<script>
+			$(function() {
+				//$(".tab").tab();
+				$(".tab").tab({
+					//各种参数，各种属性
+					currentClass: 'current',
+					tabNav: '.tabNav>li',
+					tabContent: '.tabContent>div',
+					eventType: 'mouseover'
+				}).find(".tabNav>li:eq(1)").css('background', 'red');
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="tab">
+			<ul class="tabNav">
+				<li class="current">html</li>
+				<li>css</li>
+				<li>javascript</li>
+			</ul>
+			<div class="tabContent">
+				<div style="display: block;">html</div>
+				<div>css</div>
+				<div>javascipt</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
