@@ -23,3 +23,7 @@ setTimeout()和setInterval()经常被用来处理延时和定时任务。setTime
 `<script type='text/html' style='display:block'>
     <input type="text" />
 </scipt>`
+
+### 完美解决HTML中footer保持在页面底部问题
+
+https://blog.csdn.net/m0_38099607/article/details/71598423/
