@@ -4,25 +4,21 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-		<title>正在发布项目,请等待...</title>
+		<title>正在发布项目，请等待</title>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 		<script type="application/x-javascript">
 			addEventListener("load", function() {
-				setTimeout(
-					hideURLbar, 0);
+				setTimeout(hideURLbar, 0);
 			}, false);
 
 			function hideURLbar() {
 				window.scrollTo(0, 1);
 			}
 		</script>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+
 		<style type="text/css">
-			body {
-				font-family: 'Love Ya Like A Sister', cursive;
-			}
-			
 			body {
 				background: #eaeaea;
 			}
@@ -36,10 +32,6 @@
 				margin-top: 40px;
 			}
 			
-			.logo img {
-				width: 250px;
-			}
-			
 			.logo p {
 				color: #272727;
 				font-size: 26px;
@@ -49,7 +41,7 @@
 			.logo p span {
 				color: lightgreen;
 			}
-
+			
 			.sub a {
 				color: #fff;
 				background: #272727;
@@ -66,8 +58,8 @@
 			.footer {
 				color: black;
 				position: absolute;
-				right: 5%;
-				bottom: 5%;
+				right: 20px;
+				bottom: 20px;
 			}
 			
 			.footer a {
@@ -79,15 +71,16 @@
 	<body>
 		<div class="wrap">
 			<div class="logo">
-				<p>Please Wait a Moment...</p>
+				<p>OOPS! - Could not Find it</p>
 				<p>网站管理员正在部署项目...</p>
-				<p>请刷新页面后重试...</p>
-				<FONT face=GB2312 color=#FF4500 size=4><span id="show"></span>
-				</FONT> 秒后刷新页面
+				<p>请稍等片刻，再刷新页面...</p>
+				<FONT face=GB2312 color=#FF4500 size=4>
+					<span id="show">10</span>
+				</FONT>秒后刷新页面
 
 				<div class="sub">
 					<p>
-						<a href=".">Refresh-立即刷新</a>
+						<a href="javascript:window.history.back(-1); ">Back-立即返回</a>
 					</p>
 				</div>
 			</div>
@@ -95,15 +88,15 @@
 
 		<div class="footer">
 			问题反馈-
-			<a href="http://153355720.qzone.qq.com">菁英微博第1组</a>
+			<a href="http://www.bzchao.com">个人主页</a>
 		</div>
 
 		<script>
-			var t = 10; //设定跳转的时间 
-			setInterval("refer()", 900); //启动1秒定时 
+			var t = 9; //设定跳转的时间 
+			setInterval("refer()", 1000); //启动1秒定时 
 			function refer() {
 				if(t < 1) {
-					location = "."; //#设定跳转的链接地址 
+					location = ""; //#设定跳转的链接地址 
 				}
 				document.getElementById('show').innerHTML = t; // 显示倒计时 
 				t--; // 计数器递减 
