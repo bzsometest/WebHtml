@@ -93,10 +93,11 @@
 
 		<script>
 			var t = 9; //设定跳转的时间 
-			setInterval("refer()", 1000); //启动1秒定时 
+			var timer=setInterval("refer()", 1000); //启动1秒定时 
 			function refer() {
 				if(t < 1) {
 					location = ""; //#设定跳转的链接地址 
+					clearInterval(timer);
 				}
 				document.getElementById('show').innerHTML = t; // 显示倒计时 
 				t--; // 计数器递减 
